@@ -1,4 +1,5 @@
 import { Play } from "phosphor-react";
+import React from "react";
 import {
   FormContainer,
   HomeContainer,
@@ -18,12 +19,13 @@ const newCycleFormValidationSchema = zod.object({
   minutesAmount: zod.number().min(5, "Informe pelo menos 5 minutos").max(60, "Informe no máximo60 minutos"),
 });
 
-// o zod já tem uma função de exportar a tipagem:
-// sempre que preciso referenciar uma variavel no TS, preciso chamar o typeof
-type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>;
+interface NewCycleFormData {
+  task: string;
+  minutesAmount: number;
+}
 
 export default function Home() {
-  const { register, handleSubmit, watch, formState, reset } = useForm<NewCycleFormData>({
+  const { register, handleSubmit, watch, formState } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
       task: "",
@@ -36,8 +38,6 @@ export default function Home() {
   // When submitted
   function handleCreateNewCycle(data: NewCycleFormData) {
     console.log(data);
-    // reset the form to defaultValues
-    reset();
   }
 
   // Like a reactive variable
