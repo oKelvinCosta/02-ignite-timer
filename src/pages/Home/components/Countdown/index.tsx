@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useEffect, useContext } from "react";
 import { CountdownContainer, Separator } from "./styles";
 import { differenceInSeconds } from "date-fns";
 import { CycleContext } from "../../../../contexts/CycleContext";
@@ -16,7 +16,7 @@ export default function Countdown() {
     if (activeCycle) {
       // we can't believe in setInterval, the 1second is never a real 1second
       interval = setInterval(() => {
-        const secondsDifference = differenceInSeconds(new Date(), activeCycle.startDate);
+        const secondsDifference = differenceInSeconds(new Date(), new Date(activeCycle.startDate));
 
         // Complete
         if (secondsDifference >= totalSeconds) {

@@ -1,54 +1,97 @@
-# React + TypeScript + Vite
+# Ignite Timer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Pomodoro-style timer application built with React and TypeScript as part of Rocketseat's Ignite program.
 
-Currently, two official plugins are available:
+## 🚀 Technologies & Concepts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was developed with the following technologies and concepts:
 
-## Expanding the ESLint configuration
+### Core Technologies
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - JavaScript library for building user interfaces
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Fast build tool and development server
+- **React Router DOM** - Client-side routing
+- **Styled Components** - CSS-in-JS styling solution
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### State Management
+
+- **Context API** - For global state management
+- **useReducer** - For complex state logic
+- **Immer** - For working with immutable state in a more convenient way
+
+### Form Handling
+
+- **React Hook Form** - For form state management and validation
+- **Zod** - Schema validation with TypeScript integration
+
+### UI/UX
+
+- **Phosphor Icons** - Beautiful and consistent icon set
+- **Styled Components Theming** - For consistent theming across the application
+- **Responsive Design** - Works on different screen sizes
+
+### Development Tools
+
+- **ESLint** - Code linting with Rocketseat's configuration
+- **TypeScript** - Static type checking
+- **Vite** - Fast development server and build tool
+
+## 📂 Project Structure
+
+```
+src/
+├── @types/              # TypeScript type definitions
+├── assets/              # Static assets like images and fonts
+├── components/          # Reusable UI components
+├── contexts/            # React contexts for state management
+├── layouts/             # Layout components
+├── pages/               # Application pages
+│   ├── Home/           # Home page with timer functionality
+│   └── History/        # History page to track completed cycles
+├── reducers/            # Reducer functions for useReducer
+│   └── cycles/         # Cycle-related reducers and actions
+└── styles/              # Global styles and theme configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📝 Features
+
+- Start, interrupt, and complete pomodoro cycles
+- Track time spent on tasks
+- View history of completed cycles
+- Form validation with error handling
+- Responsive design
+
+## 📚 What I Learned
+
+This project helped me understand and practice:
+
+- React Hooks (useState, useEffect, useReducer, useContext)
+- TypeScript with React components and hooks
+- State management patterns with Context API and useReducer
+- Form handling and validation with React Hook Form and Zod
+- Styling with Styled Components and theming
+- Clean code organization and project structure
+- Date manipulation with date-fns
+- Immutable state updates with Immer
+
+## 📄 License
+
+This project is part of Rocketseat's Ignite program and is available under the MIT license.
+
+---
+
+Made with 💜 by Kelvin Costa 👋
