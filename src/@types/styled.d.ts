@@ -1,12 +1,10 @@
-// File to only define types
 import "styled-components";
-import { defaultTheme } from "styled-components";
+import { defaultTheme } from "../styles/themes/default";
 
-// Inherit default theme
 type ThemeType = typeof defaultTheme;
 
-//Ovewrite
 declare module "styled-components" {
-  export interface defaultTheme extends ThemeType {}
-  // export interface defaultTheme {}
+  // This interface extends the theme type to be used with styled-components
+
+  export interface DefaultTheme extends ThemeType {}
 }
